@@ -16,14 +16,13 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Flutter Demo',
         debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          primarySwatch: Colors.amber,
-        ),
+        theme:
+            ThemeData(primarySwatch: Colors.amber, fontFamily: 'CourierPrime'),
         home: Scaffold(
           body: Container(
               decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage("assets/castle.jpg"),
+                      image: AssetImage("assets/image/castle.jpg"),
                       colorFilter: ColorFilter.mode(
                           Colors.black.withOpacity(0.2), BlendMode.darken),
                       fit: BoxFit.cover)),

@@ -19,7 +19,7 @@ class PergamentCard extends StatelessWidget {
               minHeight: 200, minWidth: stretchWide ? double.infinity : 0),
           decoration: BoxDecoration(
               image: DecorationImage(
-                  image: AssetImage("assets/pergament.png"),
+                  image: AssetImage("assets/image/pergament.png"),
                   fit: BoxFit.cover,
                   colorFilter: ColorFilter.mode(
                       Colors.black.withOpacity(0.05), BlendMode.darken))),

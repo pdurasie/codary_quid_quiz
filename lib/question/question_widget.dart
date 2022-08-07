@@ -1,7 +1,6 @@
 import 'package:codary_challenge/question/answered_question.dart';
 import 'package:codary_challenge/question/question.dart';
 import 'package:codary_challenge/quiz/quiz_state_provider.dart';
-import 'package:codary_challenge/util/pergament_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -52,9 +51,9 @@ class QuestionAnswers extends StatelessWidget {
   Widget build(BuildContext context) {
     return GridView.count(
       crossAxisCount: 2,
-      childAspectRatio: 1.66,
+      childAspectRatio: 1.5,
       shrinkWrap: true,
-      physics: NeverScrollableScrollPhysics(),
+      physics: const NeverScrollableScrollPhysics(),
       children: answers
           .map((e) => AnswerField(
                 answer: e,
@@ -80,11 +79,14 @@ class AnswerField extends StatelessWidget {
       child: InkWell(
         onTap: () => onAnswerSelected(answer),
         splashColor: Colors.amber.shade200,
-        child: Center(
-          child: Text(
-            answer.text,
-            textAlign: TextAlign.center,
-            style: TextStyle(fontWeight: FontWeight.w500),
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Center(
+            child: Text(
+              answer.text,
+              textAlign: TextAlign.center,
+              style: const TextStyle(fontWeight: FontWeight.w500),
+            ),
           ),
         ),
       ),
