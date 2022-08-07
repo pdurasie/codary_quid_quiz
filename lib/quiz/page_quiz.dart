@@ -32,27 +32,30 @@ class PageQuiz extends ConsumerWidget {
     } else {
       child = const Text("Error"); //TODO add more meaningful error handling
     }
-    return Stack(
-      children: [
-        WitchAnimation(
-          isVisible: state is QuizInitial,
-        ),
-        Align(
-          alignment: Alignment.bottomCenter,
-          child: Padding(
-            padding:
-                const EdgeInsets.symmetric(horizontal: 8.0, vertical: 12.0),
-            child: PergamentCard(
-              child: AnimatedSwitcher(
-                duration: const Duration(milliseconds: 150),
-                switchOutCurve: Curves.easeOut,
-                switchInCurve: Curves.easeOut,
-                child: child,
+    return WillPopScope(
+      onWillPop: ref.read(quizStateNotifierProvider.notifier).onBackPressed,
+      child: Stack(
+        children: [
+          WitchAnimation(
+            isVisible: state is QuizInitial,
+          ),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Padding(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 8.0, vertical: 12.0),
+              child: PergamentCard(
+                child: AnimatedSwitcher(
+                  duration: const Duration(milliseconds: 150),
+                  switchOutCurve: Curves.easeOut,
+                  switchInCurve: Curves.easeOut,
+                  child: child,
+                ),
               ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
@@ -159,7 +162,7 @@ class WitchAnimation extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnimatedSwitcher(
       duration: const Duration(milliseconds: 400),
-      switchOutCurve: Curves.easeInCubic,
+      switchOutCurve: Curves.easeOutCubic,
       switchInCurve: Curves.easeOutCubic,
       // This will make the animation look like the child is moving up,
       // since the full screen child's height is gradually being reduced

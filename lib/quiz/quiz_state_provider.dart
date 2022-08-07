@@ -37,6 +37,15 @@ class QuizStateNotifier extends StateNotifier<QuizState> {
     }
   }
 
+  Future<bool> onBackPressed() async {
+    if (state is QuizInitial) {
+      return true;
+    } else {
+      state = QuizInitial();
+      return false;
+    }
+  }
+
   Future<List<Question>?> loadQuestions(int questionCount) async {
     try {
       _questions = await DataRepository().fetchQuestions();
