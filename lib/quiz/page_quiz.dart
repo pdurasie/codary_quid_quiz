@@ -170,12 +170,16 @@ class WitchAnimation extends StatelessWidget {
       ),
       child: isVisible
           ? Align(
-              alignment: Alignment.center,
-              child: LottieBuilder.asset(
-                'assets/anim/witch.json',
-                height: 300,
-                repeat: true,
-                frameRate: FrameRate(60),
+              alignment: Alignment.topCenter,
+              child: Padding(
+                padding: EdgeInsets.only(
+                    top: MediaQuery.of(context).size.height * 0.12),
+                child: LottieBuilder.asset(
+                  'assets/anim/witch.json',
+                  height: 300,
+                  repeat: true,
+                  frameRate: FrameRate(60),
+                ),
               ))
           : const SizedBox.shrink(),
     );

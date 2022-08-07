@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:codary_challenge/question/answered_question.dart';
 import 'package:codary_challenge/question/question.dart';
 import 'package:codary_challenge/quiz/quiz_state_provider.dart';
@@ -51,7 +52,7 @@ class QuestionAnswers extends StatelessWidget {
   Widget build(BuildContext context) {
     return GridView.count(
       crossAxisCount: 2,
-      childAspectRatio: 1.5,
+      childAspectRatio: 1.25,
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       children: answers
@@ -82,9 +83,11 @@ class AnswerField extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Center(
-            child: Text(
+            child: AutoSizeText(
               answer.text,
               textAlign: TextAlign.center,
+              maxFontSize: 15,
+              minFontSize: 11,
               style: const TextStyle(fontWeight: FontWeight.w500),
             ),
           ),
