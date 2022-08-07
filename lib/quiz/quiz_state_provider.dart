@@ -41,9 +41,14 @@ class QuizStateNotifier extends StateNotifier<QuizState> {
     if (state is QuizInitial) {
       return true;
     } else {
-      state = QuizInitial();
+      reset();
       return false;
     }
+  }
+
+  void reset() {
+    _questions = [];
+    state = QuizInitial();
   }
 
   Future<List<Question>?> loadQuestions(int questionCount) async {
