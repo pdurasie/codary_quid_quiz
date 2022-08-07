@@ -79,10 +79,6 @@ flutter:
       - family: CourierPrime
         fonts:
           - asset: assets/fonts/CourierPrime-Regular.ttf
-          - asset: assets/fonts/CourierPrime-Italic.ttf
-            style: italic
-          - asset: assets/fonts/CourierPrime-Bold.ttf
-            weight: 700
       - family: HP
         fonts:
           - asset: assets/fonts/HP-Regular.ttf
