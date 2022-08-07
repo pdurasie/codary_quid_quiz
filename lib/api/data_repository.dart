@@ -11,7 +11,7 @@ class DataRepository {
   DataRepository._();
 
   Future<List<Question>> fetchQuestions() async {
-    await Future.delayed(const Duration(milliseconds: 700));
+    await Future.delayed(const Duration(milliseconds: 900));
     return _demoQuestions.toList();
   }
 

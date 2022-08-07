@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ProviderScope(
       child: MaterialApp(
-        title: 'Flutter Demo',
+        title: 'QuidTrivia',
         debugShowCheckedModeBanner: false,
         theme:
             ThemeData(primarySwatch: Colors.amber, fontFamily: 'CourierPrime'),
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
           body: Container(
               decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage("assets/image/castle.jpg"),
+                      image: const AssetImage("assets/image/castle.jpg"),
                       colorFilter: ColorFilter.mode(
                           Colors.black.withOpacity(0.2), BlendMode.darken),
                       fit: BoxFit.cover)),

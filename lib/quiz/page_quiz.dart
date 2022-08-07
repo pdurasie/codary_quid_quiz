@@ -17,9 +17,9 @@ class PageQuiz extends ConsumerWidget {
     final state = ref.watch(quizStateNotifierProvider);
     final Widget child;
     if (state is QuizInitial) {
-      child = QuizIntro();
+      child = const QuizIntro();
     } else if (state is QuizLoading) {
-      child = CircularProgressIndicator.adaptive();
+      child = const CircularProgressIndicator.adaptive();
     } else if (state is QuizOngoing) {
       child = QuestionWidget(
         key: ValueKey(state.questions.first.hashCode),
@@ -30,7 +30,7 @@ class PageQuiz extends ConsumerWidget {
         answeredQuestions: state.answeredQuestions,
       );
     } else {
-      child = Text("Error"); //TODO add more meaningful error handling
+      child = const Text("Error"); //TODO add more meaningful error handling
     }
     return Stack(
       children: [
@@ -44,7 +44,7 @@ class PageQuiz extends ConsumerWidget {
                 const EdgeInsets.symmetric(horizontal: 8.0, vertical: 12.0),
             child: PergamentCard(
               child: AnimatedSwitcher(
-                duration: Duration(milliseconds: 150),
+                duration: const Duration(milliseconds: 150),
                 switchOutCurve: Curves.easeOut,
                 switchInCurve: Curves.easeOut,
                 child: child,
@@ -77,7 +77,7 @@ class QuizIntro extends ConsumerWidget {
             ),
           ),
           const SizedBox(height: 18),
-          Text(
+          const Text(
             "Test your trivia knowledge of the real life sport of Quidditch.\n\nChoose the right answer in three challenging questions!",
             style: TextStyle(
               fontWeight: FontWeight.w500,
@@ -89,7 +89,7 @@ class QuizIntro extends ConsumerWidget {
               onPressed: () {
                 ref.read(quizStateNotifierProvider.notifier).start();
               },
-              child: Text("Start"))
+              child: const Text("Start"))
         ],
       ),
     );
@@ -123,7 +123,7 @@ class QuizResults extends ConsumerWidget {
           const SizedBox(height: 18),
           Text(
             "You have answered $correctAnswerCount ${correctAnswerCount != 1 ? "questions" : "question"} correctly.",
-            style: TextStyle(
+            style: const TextStyle(
               fontWeight: FontWeight.w500,
               fontSize: 14,
             ),
@@ -132,7 +132,7 @@ class QuizResults extends ConsumerWidget {
           const SizedBox(height: 12),
           Text(
             getEvaluationMessage(correctAnswerCount / answeredQuestions.length),
-            style: TextStyle(
+            style: const TextStyle(
               fontWeight: FontWeight.w500,
               fontSize: 14,
             ),
@@ -140,11 +140,11 @@ class QuizResults extends ConsumerWidget {
           ),
           const SizedBox(height: 18),
           ElevatedButton.icon(
-              icon: Icon(Icons.refresh),
+              icon: const Icon(Icons.refresh),
               onPressed: () {
                 ref.read(quizStateNotifierProvider.notifier).replay();
               },
-              label: Text("Restart"))
+              label: const Text("Restart"))
         ],
       ),
     );
@@ -177,7 +177,7 @@ class WitchAnimation extends StatelessWidget {
                 repeat: true,
                 frameRate: FrameRate(60),
               ))
-          : SizedBox.shrink(),
+          : const SizedBox.shrink(),
     );
   }
 }
