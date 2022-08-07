@@ -20,18 +20,18 @@ class DataRepository {
             id: "9qe9ahsd08fhasßdfjas",
             title: "How many balls is a game of Quidditch played with?",
             explanation: "There is one quaffel, three bludgers and one snitch.",
-            answers: <Answer>{
+            answers: <Answer>[
               Answer(id: "0a8hertihansd", text: "4", isCorrect: false),
               Answer(id: "u98qmtuma0s8dz", text: "5", isCorrect: true),
               Answer(id: "a9hfsd981ahsbdf", text: "7", isCorrect: false),
               Answer(id: "1zf28zevas", text: "2", isCorrect: false),
-            }),
+            ]),
         Question(
             id: "a0sdhfg0agh290eurbasd",
             title: "When and where was the sport founded?",
             explanation:
                 "The sport was brought to life in 2005 at Middlebury College in Middlebury, Vermont, by Xander Manshel and Alex Benepe.",
-            answers: <Answer>{
+            answers: <Answer>[
               Answer(
                   id: "082z4rhouahdsf",
                   text: "In 2005 at Middlebury College in Vermont, USA.",
@@ -49,13 +49,13 @@ class DataRepository {
                   text:
                       "At Harry Potter's birthplace, Surrey, UK, with an unknown date.",
                   isCorrect: false),
-            }),
+            ]),
         Question(
             id: "a9sgdhv9g23br9aisubd",
             title:
                 "Which teams played in the World Cup final of 2016 in Frankfurt, Germany?",
             explanation: null,
-            answers: <Answer>{
+            answers: <Answer>[
               Answer(
                   id: "0a9sd0hiasdqribasd",
                   text: "Germany - France, for a score of 130 to 70*.",
@@ -71,16 +71,16 @@ class DataRepository {
                   isCorrect: false),
               Answer(
                   id: "akbsofvh24r0ohasd",
-                  text: "United Kingdom - Canada, for a score of 140 to 210*",
+                  text: "United Kingdom - Canada, for a score of 140 to 210*.",
                   isCorrect: false),
-            }),
+            ]),
         Question(
             id: "aisvbdv9gw30ruahsd",
             title:
                 "How do players substitute the use of flying broomsticks in the real sport?",
             explanation:
                 "There is a handicap in every sport: in soccer, you cannot use your arms, in basketball, you have to dribble, and in Quidditch, you have to hold a stick between your legs while playing. This makes it harder to run while catching balls and tackling players, therefore being an essential part of the sport.\n\nIn some parts of the world, the broom is substituted with a bicycle, but it is far from being common.",
-            answers: <Answer>{
+            answers: <Answer>[
               Answer(
                   id: "ohasgdf89h1308",
                   text: "Players ride bicycles instead of brooms.",
@@ -99,13 +99,14 @@ class DataRepository {
                   id: "1zf28zevas3rasd",
                   text: "Brooms were removed without a substitution.",
                   isCorrect: false),
-            }),
+            ]),
         Question(
             id: "biasdbviaj9egf924gfasd",
-            title: "How is the magically flying golden snitch implemented?",
+            title:
+                "How is the magically flying golden snitch implemented in real life?",
             explanation:
                 "The snitch is a tennis ball placed at the bottom of a long yellow pouch that is attached to the back of the snitch runner's shorts as if it were a tail. The snitch runner may do everything in their power to protect the snitch from being caught by seekers, for example pushing, running, or even throwing the player's broom away.",
-            answers: <Answer>{
+            answers: <Answer>[
               Answer(
                   id: "a9shd0ahsdofbqerj",
                   text:
@@ -125,6 +126,6 @@ class DataRepository {
                   text:
                       "Since magic is not real, there is no implementation of the snitch.",
                   isCorrect: false),
-            }),
+            ]),
       };
 }

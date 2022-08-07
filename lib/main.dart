@@ -17,10 +17,17 @@ class MyApp extends StatelessWidget {
         title: 'Flutter Demo',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          primarySwatch: Colors.blue,
+          primarySwatch: Colors.amber,
         ),
         home: Scaffold(
-          body: const PageQuiz(),
+          body: Container(
+              decoration: BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage("assets/castle.jpg"),
+                      colorFilter: ColorFilter.mode(
+                          Colors.black.withOpacity(0.2), BlendMode.darken),
+                      fit: BoxFit.cover)),
+              child: const PageQuiz()),
         ),
       ),
     );

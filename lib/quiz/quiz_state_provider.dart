@@ -41,7 +41,11 @@ class QuizStateNotifier extends StateNotifier<QuizState> {
     try {
       _questions = await DataRepository().fetchQuestions();
       _questions?.shuffle();
-      return _questions?.take(questionCount).toList();
+      _questions = _questions?.take(questionCount).toList() ?? [];
+      for (final q in (_questions ?? [])) {
+        q.answers.shuffle();
+      }
+      return _questions;
     } catch (e, stacktrace) {
       if (kDebugMode) {
         print(stacktrace);
@@ -54,12 +58,15 @@ class QuizStateNotifier extends StateNotifier<QuizState> {
     if (state is! QuizOngoing) return;
 
     (state as QuizOngoing).addAnsweredQ(answeredQ);
-    (state as QuizOngoing)
-        .questions
-        .removeWhere((element) => element.id == answeredQ.id);
+    final questions = (state as QuizOngoing).questions;
 
-    if ((state as QuizOngoing).questions.isEmpty) {
+    questions.removeWhere((element) => element.id == answeredQ.id);
+
+    if (questions.isEmpty) {
       state = QuizCompleted((state as QuizOngoing).answeredQuestions);
+    } else {
+      state = QuizOngoing(questions,
+          answeredQuestions: (state as QuizOngoing).answeredQuestions);
     }
   }
 }

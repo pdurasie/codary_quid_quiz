@@ -11,9 +11,11 @@ class QuizLoading extends QuizState {}
 
 class QuizOngoing extends QuizState {
   final List<Question> questions;
-  final List<AnsweredQuestion> _answeredQuestions = [];
+  final List<AnsweredQuestion> _answeredQuestions;
 
-  QuizOngoing(this.questions);
+  QuizOngoing(this.questions,
+      {List<AnsweredQuestion> answeredQuestions = const []})
+      : _answeredQuestions = [...answeredQuestions];
 
   List<AnsweredQuestion> get answeredQuestions =>
       List.unmodifiable(_answeredQuestions);

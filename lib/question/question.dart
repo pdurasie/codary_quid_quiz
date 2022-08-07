@@ -2,7 +2,7 @@ import 'answer.dart';
 
 class Question {
   final String id;
-  final Set<Answer> answers;
+  final List<Answer> answers;
   final String title;
   final String? explanation;
 
